@@ -1,29 +1,64 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <app-home></app-home>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+
+import Home from './views/Home.vue';
+import $ from 'jquery';
+
+export default {
+
+  components: {
+    'app-home': Home
+  },
+
+  beforeCreate(){
+    
+    $.ajax({
+      type: 'POST',
+      url: 'http://localhost/bin/vue-projects/zadanie1/server/php/update.php',
+      success: (res) => {
+        console.log('cleared');
+      }
+    });
+
   }
+
 }
+
+</script>
+
+<style lang="scss">
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html{
+  min-height: 100vh;
+}
+
+body{
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#app{
+  width: 100%;
+  height: auto;
+}
+
+.page{
+  width: inherit;
+  position: fixed;
+  top: 238px;
+  left: 90px;
+}
+
 </style>
