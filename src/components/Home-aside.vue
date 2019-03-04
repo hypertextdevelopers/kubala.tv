@@ -25,7 +25,7 @@ export default {
 
     created(){
         window.setInterval(() => {
-            axios.get('http://localhost/bin/vue-projects/zadanie1/server/php/select.php')
+            axios.get('https://wearisome-hole.000webhostapp.com/server/php/select.php')
                 .then( (response) => {
                     this.questions = response.data;
                 });
@@ -40,7 +40,7 @@ export default {
 
 aside{
     width: 200px;
-    height: auto;
+    height: 460px;
     border-right: 1px solid #c2c2c2;
     display: flex;
     flex-direction: column;
@@ -78,7 +78,7 @@ aside{
 
     ul{
         width: 100%;
-        height: auto;
+        height: 460px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;

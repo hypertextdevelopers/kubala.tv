@@ -19,7 +19,7 @@ export default {
     
     $.ajax({
       type: 'POST',
-      url: 'http://localhost/bin/vue-projects/zadanie1/server/php/update.php',
+      url: 'https://wearisome-hole.000webhostapp.com/server/php/update.php',
       success: (res) => {
         console.log('cleared');
       }

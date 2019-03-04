@@ -35,7 +35,7 @@ export default {
         sendData: function(){
                 $.ajax({
                     type: 'POST',
-                    url: 'http://localhost/bin/vue-projects/zadanie1/server/php/user_values.php',
+                    url: 'https://wearisome-hole.000webhostapp.com/server/php/user_values.php',
                     data: {
                         q1_answer: this.q1_answer,
                         q2_answer: this.q2_answer,
